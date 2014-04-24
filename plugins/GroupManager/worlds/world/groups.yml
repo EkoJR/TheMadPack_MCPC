@@ -10,7 +10,7 @@
 
 groups:
   Default:
-    default: true
+    default: false
     permissions:
     - -mcmmo.mobhealthdisplay
     - -bukkit.command.kill
@@ -24,7 +24,7 @@ groups:
       build: false
       suffix: ''
   Builder:
-    default: false
+    default: true
     permissions: []
     inheritance:
     - default
