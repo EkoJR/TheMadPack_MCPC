@@ -194,9 +194,9 @@ world-environment-settings:
   nether:
     keep-world-loaded: true
   the_end:
-    keep-world-loaded: false
+    keep-world-loaded: true
   myst:
-    keep-world-loaded: false
+    keep-world-loaded: true
   scl:
     keep-world-loaded: false
   storage:
@@ -206,7 +206,7 @@ world-environment-settings:
   underdark:
     keep-world-loaded: false
   gccorespacestation:
-    keep-world-loaded: false
+    keep-world-loaded: true
   bedrock:
     keep-world-loaded: false
   gcmoon:
