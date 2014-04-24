@@ -20,23 +20,27 @@ groups:
     permissions:
     - groupmanager.notify.self
 
+  g:groupmanager_streamer:
+    permissions: []
+
   g:groupmanager_moderator:
     permissions:
     - groupmanager.listgroups
+    - groupmanager.manglistp
     - groupmanager.mandemote
     - groupmanager.manpromote
+    - groupmanager.mansave
     - groupmanager.manselect
-    - groupmanager.manuadd
-    - groupmanager.manudel
     - groupmanager.manwhois
     - groupmanager.notify.other
 
   g:groupmanager_admin:
     permissions:
     - groupmanager.mantogglevalidate
-    - groupmanager.mansave
+    
     - groupmanager.mangcheckp
-    - groupmanager.manglistp
+    - groupmanager.manuadd
+    - groupmanager.manudel
     - groupmanager.manucheckp
     - groupmanager.manulistp
 
@@ -49,13 +53,21 @@ groups:
     - bukkit.broadcast.user
     - -bukkit.command.plugins
 
+  g:bukkit_streamer:
+    permissions:
+    - bukkit.command.whitelist
+    - bukkit.command.whitelist.add
+    - bukkit.command.whitelist.remove
+    - bukkit.command.whitelist.list
+    - bukkit.command.whitelist.reload
+    - bukkit.command.kick
+
   g:bukkit_moderator:
     permissions:
     - bukkit.command.ban
     - bukkit.command.ban.ip
     - bukkit.command.ban.player
     - bukkit.command.gamemode
-    - bukkit.command.kick
     - bukkit.command.unban
     - bukkit.command.unban.ip
     - bukkit.command.unban.player
@@ -86,13 +98,8 @@ groups:
     - bukkit.command.time.add
     - bukkit.command.time.set
     - bukkit.command.version
-    - bukkit.command.whitelist
-    - bukkit.command.whitelist.add
     - bukkit.command.whitelist.disable
     - bukkit.command.whitelist.enable
-    - bukkit.command.whitelist.list
-    - bukkit.command.whitelist.reload
-    - bukkit.command.whitelist.remove
 
 # Permission nodes for Essentials
 # by ementalo, snowleo, and KHobbits
@@ -117,9 +124,6 @@ groups:
     - essentials.back
     - essentials.back.ondeath
     - essentials.balance
-    - essentials.balance.others
-    - essentials.balancetop
-    - essentials.book
     - essentials.chat.color
     - essentials.chat.format
     - essentials.chat.shout
@@ -141,14 +145,10 @@ groups:
     - essentials.msg
     - essentials.msg.color
     - essentials.msg.format
-    - essentials.nick
     - essentials.pay
     - essentials.ping
-    - essentials.powertool
-    - essentials.powertooltoggle
     - essentials.protect
     - essentials.recipe
-    - essentials.seen
     - essentials.sethome
     - essentials.sethome.bed
     - essentials.sethome.multiple
@@ -168,11 +168,24 @@ groups:
     - essentials.tpahere
     - essentials.tpdeny
     - essentials.warp
-    - essentials.warp.list
     - essentials.worth
     - essentials.jail.allow.mail
     - essentials.jail.allow.ping
     - essentials.jail.allow.seen
+
+  g:essentials_member:
+    permissions: []
+
+  g:essentials_streamer:
+    permissions:
+    - essentials.balance.others
+    - essentials.balancetop
+    - essentials.book
+    - essentials.kick
+    - essentials.sethome.multiple.streamer
+    - essentials.nick
+    - essentials.seen
+    - essentials.warp.list
 
   g:essentials_moderator:
     permissions:
@@ -200,7 +213,6 @@ groups:
     - essentials.invsee
     - essentials.jails
     - essentials.jump
-    - essentials.kick
     - essentials.kick.notify
     - essentials.kill
     - essentials.kits.*
@@ -212,6 +224,7 @@ groups:
     - essentials.realname
     - essentials.seen.banreason
     - essentials.seen.extra
+    - essentials.sethome.multiple.staff
     - essentials.setwarp
     - essentials.signs.create.*
     - essentials.signs.break.*
@@ -220,6 +233,9 @@ groups:
     - essentials.thunder
     - essentials.time
     - essentials.time.set
+    - essentials.powertool
+    - essentials.powertool.append
+    - essentials.powertooltoggle
     - essentials.protect.alerts
     - essentials.protect.admin
     - essentials.protect.ownerinfo
@@ -254,76 +270,22 @@ groups:
     - -essentials.plugin
     - essentials.*
 
-# Permission nodes for Towny by ElgarL
-# http://dev.bukkit.org/server-mods/towny-advanced/
-
-  g:towny_default:
-    permissions:
-    - towny.chat.local
-
-  g:towny_builder:
-    permissions:
-    - towny.wild.build.6
-    - towny.wild.destroy.6
-    - towny.wild.destroy.14
-    - towny.wild.destroy.15
-    - towny.wild.destroy.16
-    - towny.wild.build.17
-    - towny.wild.destroy.17
-    - towny.wild.destroy.18
-    - towny.wild.destroy.21
-    - towny.wild.destroy.31
-    - towny.wild.destroy.37
-    - towny.wild.destroy.38
-    - towny.wild.destroy.39
-    - towny.wild.destroy.40
-    - towny.wild.destroy.50
-    - towny.wild.destroy.56
-    - towny.wild.destroy.73
-    - towny.wild.destroy.74
-    - towny.wild.destroy.78
-    - towny.wild.destroy.81
-    - towny.wild.destroy.82
-    - towny.wild.destroy.83
-    - towny.wild.destroy.86
-    - towny.wild.destroy.103
-    - towny.wild.destroy.106
-    - towny.wild.destroy.111
-    - towny.wild.destroy.115
-
-  g:towny_moderator:
-    permissions:
-    - towny.chat.mod
-    - towny.wild.switch.64
-    - towny.wild.build.83
-    - towny.wild.build.86
-    - towny.wild.build.103
-    - towny.wild.build.111
-    - towny.wild.build.115
-
-  g:towny_admin:
-    permissions:
-    - towny.admin
-    - -towny.wild.destroy.119
-    - -towny.wild.destroy.120
-    - towny.chat.admin
-
 # Permission nodes for VanishNoPacket by mbaxter
 # http://dev.bukkit.org/server-mods/vanish/
 
-  g:vanish_moderator:
-    permissions:
-    - -vanish.*
-    - vanish.vanish
-    - vanish.smokin
-    - vanish.nofollow
-    - vanish.nopickup
-    - vanish.preventincomingdamage
-    - vanish.hooks.dynmap.alwayshidden
-    - vanish.hooks.essentials.hide
+  #g:vanish_moderator:
+    #permissions:
+    #- -vanish.*
+    #- vanish.vanish
+    #- vanish.smokin
+    #- vanish.nofollow
+    #- vanish.nopickup
+    #- vanish.preventincomingdamage
+    #- vanish.hooks.dynmap.alwayshidden
+    #- vanish.hooks.essentials.hide
 
-  g:vanish_admin:
-    permissions:
-    - vanish.silentjoin
-    - vanish.silentquit
-    - vanish.silentchests
+  #g:vanish_admin:
+    #permissions:
+    #- vanish.silentjoin
+    #- vanish.silentquit
+    #- vanish.silentchests
