@@ -12,10 +12,7 @@ groups:
   Default:
     default: true
     permissions:
-<<<<<<< HEAD
-=======
     - -mcmmo.mobhealthdisplay
->>>>>>> 95cdc9f1d7399c3fe6b9199610c5a1eb02188fb4
     - -bukkit.command.kill
     inheritance:
     - g:groupmanager_default

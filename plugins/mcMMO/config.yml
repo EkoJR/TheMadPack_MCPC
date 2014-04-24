@@ -87,11 +87,7 @@ Scoreboard:
 Mob_Healthbar:
     # Display_Type: Default display for mob health bars - HEARTS, BAR, or DISABLED
     # Display_Time: Amount of time (in seconds) to display. To display permanently, set to -1
-<<<<<<< HEAD
-    Display_Type: HEARTS
-=======
     Display_Type: DISABLED
->>>>>>> 95cdc9f1d7399c3fe6b9199610c5a1eb02188fb4
     Display_Time: 3
 
 Database_Purging:
@@ -443,8 +439,4 @@ Particles:
     # These settings determine if fireworks should get launched when a player levels-up,
     # this will happen by default for every 100 levels.
     LevelUp_Enabled: true
-<<<<<<< HEAD
     LevelUp_Tier: 100
-=======
-    LevelUp_Tier: 100
->>>>>>> 95cdc9f1d7399c3fe6b9199610c5a1eb02188fb4
