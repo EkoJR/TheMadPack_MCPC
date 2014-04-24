@@ -49,10 +49,10 @@ teleport-delay: 0
 
 # The delay, in seconds, a player can't be attacked by other players after they have been teleported by a command.
 # This will also prevent the player attacking other players.
-teleport-invulnerability: 4
+teleport-invulnerability: 3
 
 # The delay, in seconds, required between /heal or /feed attempts.
-heal-cooldown: 60
+heal-cooldown: 30
 
 # What to prevent from /i /give.
 # e.g item-spawn-blacklist: 46,11,10
@@ -222,19 +222,19 @@ player-commands:
 # For more information, visit http://wiki.ess3.net/wiki/Kits
 kits:
   tools:
-    delay: 10
+    delay: 200
     items:
       - 272 1
       - 273 1
       - 274 1
       - 275 1
-  dtools:
-    delay: 600
-    items:
-      - 278 1 efficiency:1 durability:1 fortune:1 name:&4Gigadrill lore:The_drill_that_&npierces|the_heavens
-      - 277 1 digspeed:3 name:Dwarf lore:Diggy|Diggy|Hole
-      - 298 1 color:255,255,255 name:Top_Hat lore:Good_day,_Good_day
-      - 279:780 1
+#  dtools:
+#    delay: 600
+#    items:
+#      - 278 1 efficiency:1 durability:1 fortune:1 name:&4Gigadrill lore:The_drill_that_&npierces|the_heavens
+#      - 277 1 digspeed:3 name:Dwarf lore:Diggy|Diggy|Hole
+#      - 298 1 color:255,255,255 name:Top_Hat lore:Good_day,_Good_day
+#      - 279:780 1
   notch:
     delay: 6000
     items:
@@ -264,8 +264,8 @@ enabledSigns:
   #- trade
   #- free
   #- disposal
-  #- warp
-  #- kit
+  - warp
+  - kit
   #- mail
   #- enchant
   #- gamemode
@@ -273,8 +273,8 @@ enabledSigns:
   #- info
   #- spawnmob
   #- repair
-  #- time
-  #- weather
+  - time
+  - weather
 
 # How many times per second can Essentials signs be interacted with per player.
 # Values should be between 1-20, 20 being virtually no lag protection.
@@ -422,11 +422,16 @@ world-home-permissions: false
 # People with essentials.sethome.multiple.unlimited are not limited by these numbers.
 # For more information, visit http://wiki.ess3.net/wiki/Multihome
 sethome-multiple:
-  default: 3
+  default: 5
+  streamer: 10
+  vip1: 10
+  vip2: 20
+  vip3: 30
+  staff: 50
   # essentials.sethome.multiple.vip
-  vip: 5
+  #vip: 5
   # essentials.sethome.multiple.staff
-  staff: 10
+  #staff: 10
 
 # Set timeout in seconds for players to accept tpa before request is cancelled.
 # Set to 0 for no timeout.
@@ -441,7 +446,7 @@ tpa-accept-cancellation: 120
 # For more information, visit http://wiki.ess3.net/wiki/Essentials_Economy
 
 # Defines the balance with which new players begin.  Defaults to 0.
-starting-balance: 0
+starting-balance: 10
 
 # worth-# defines the value of an item when it is sold to the server via /sell.
 # These are now defined in worth.yml
@@ -637,40 +642,40 @@ protect:
     # Should people with build: false in permissions be allowed to build?
     # Set true to disable building for those people.
     # Setting to false means EssentialsAntiBuild will never prevent you from building.
-    build: true
+    #build: true
 
     # Should people with build: false in permissions be allowed to use items?
     # Set true to disable using for those people.
     # Setting to false means EssentialsAntiBuild will never prevent you from using.
-    use: true
+    #use: true
 
     # Should we tell people they are not allowed to build?
-    warn-on-build-disallow: true
+    #warn-on-build-disallow: true
 
   # For which block types would you like to be alerted?
   # You can find a list of IDs in plugins/Essentials/items.csv after loading Essentials for the first time.
   # 10 = lava :: 11 = still lava :: 46 = TNT :: 327 = lava bucket
-  alert:
-    on-placement: 10,11,46,327
-    on-use: 327
-    on-break:
+  #alert:
+    #on-placement: 10,11,46,327
+    #on-use: 327
+    #on-break:
 
-  blacklist:
+  #blacklist:
 
     # Which blocks should people be prevented from placing?
-    placement: 10,11,46,327
+    #placement: 10,11,46,327
 
     # Which items should people be prevented from using?
-    usage: 327
+    #usage: 327
 
     # Which blocks should people be prevented from breaking?
-    break:
+    #break:
 
     # Which blocks should not be pushed by pistons?
-    piston:
+    #piston:
 
     # Which blocks should not be dispensed by dispensers
-    dispenser:
+    #dispenser:
 
 ############################################################
 # +------------------------------------------------------+ #
