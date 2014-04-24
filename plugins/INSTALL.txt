@@ -1,0 +1,12 @@
+**************************************
+**** INSTALL BUKKIT PLUGINS FIRST ****
+**************************************
+ChestShop
+ClearLag
+Essentials
+EssentialsGroupManager
+GriefPrevention
+McJobs
+McMMO
+WorldEdit
+WorldGuard
