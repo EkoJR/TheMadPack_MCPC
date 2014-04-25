@@ -25,9 +25,9 @@ config-updater:
 # -- 'check-radius' stands for the radius clearlag will check for nearby entities
 # -- 'max-mobs' is how many entities may be in the radius before the spawning is blocked
 mobegg-limiter:
-  enabled: false
+  enabled: true
   check-radius: 8
-  max-mobs: 5
+  max-mobs: 3
  
 #Disable new chunk generation, or just put a cap on how many can load at once.
 # -- THIS DOES NOT WORK WITH 1.6.4!
@@ -42,10 +42,10 @@ chunk-limiter:
 # -- If it's too high, expect bugs / lots of lag
 # -- You MUST reboot your server to use these, /lagg reload will NOT work...
 mob-range:
-  enabled: false
-  zombie: 30
-  skeleton: 30
-  creeper: 20
+  enabled: true
+  zombie: 15
+  skeleton: 15
+  creeper: 10
  
 #How long should items/Mobs be left on the ground
 # -- Goes by seconds
@@ -78,15 +78,15 @@ custom-mobspawner:
 #Chance mobs will have armor/sword, 1 being diamond every time
   armor-chance: 30 
   mobs: #More types of a mob, more likely it'll spawn(ONLY IN NORMAL WORLDS!)
-    - zombie 5
-    - skeleton 3
-    - creeper
-    - enderman
+  - zombie 5
+  - skeleton 3
+  - creeper
+  - enderman
   animals: #More types of a mob, more likely it'll spawn(ONLY IN NORMAL WORLDS!)
-    - pig 4
-    - sheep 1
-    - cow 6
-    - chicken 2
+  - pig 4
+  - sheep 1
+  - cow 6
+  - chicken 2
   
 #This option disallows the placement of too many tnt-minecarts
 tnt-minecart:
@@ -101,7 +101,7 @@ dispenser-reducer:
   
 #This option reduces the explosions of mass amounts of tnt, and reduces tnt lag
 tnt:
-  tnt-reducer: false
+  tnt-reducer: true
   
 #This option reduces fire spread rate
 firespread-reducer:
@@ -110,15 +110,15 @@ firespread-reducer:
   
 #How many entities should one chunk be allowed to hold?
 chunk-entity-limiter:
-  enabled: false
+  enabled: true
   clean-chunk: true
-  limit: 40
+  limit: 20
   
 spawn-limiter:
-  enabled: false
-  interval: 15
-  monsters: 300
-  animals: 300
+  enabled: true
+  interval: 2
+  monsters: 20
+  animals: 20
   
 #Meters your TPS, if it goes to low, run the commands you wrote below!
 tps-meter:
@@ -139,13 +139,13 @@ kill-mobs:
   
 #This takes care of mob spawners
 mobspawner:
-  enabled: false
+  enabled: true
   max-spawn: 4
   
 #No longer bugged! -- Dont use if you have CB++ or Spigot!
 item-merger:
-  enabled: false
-  radius: 6
+  enabled: true
+  radius: 4
   
 #Auto-removal options
 auto-removal:
@@ -153,7 +153,7 @@ auto-removal:
   broadcast-message: '&6[ClearLag] &aRemoved +RemoveAmount Entities!'
   broadcast-warning: true
   enable-scheduler: true
-  autoremoval-interval: 400
+  autoremoval-interval: 12000
   warning-delay: 60
   
 #What should be removed during an auto-removal
@@ -238,7 +238,7 @@ check:
     monster: true
    
 limit:
-  enable-limit: false
+  enable-limit: true
   max: 1000
   check-interval: 60
   world-filter:
