@@ -1,5 +1,5 @@
-max_pay: -1
-percent_cost: 95
+max_pay: 50000
+percent_cost: 92
 show_pay: true
 timers:
   time_interval: 60
@@ -8,18 +8,19 @@ timers:
   show_interval: 5
   delete_cache: 180
 max_jobs:
-  default: 4
-  Members: 5
-  Admins: 6
+  default: 3
+  Streamer: 5
+  Moderator: 5
+  admin: 20
 ranks:
   novice: 1
-  apprentice: 10
-  trained: 20
-  professional: 50
-  veteran: 100
-  expert: 250
-  master: 500
-  grandmaster: 1000
+  apprentice: 5
+  trained: 10
+  professional: 20
+  veteran: 50
+  expert: 100
+  master: 150
+  grandmaster: 200
 backend:
   type: file
   user: user
