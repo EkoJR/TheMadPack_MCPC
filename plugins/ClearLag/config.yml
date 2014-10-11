@@ -9,29 +9,25 @@
 #                     All possible mob names                         #
 # http://dev.bukkit.org/server-mods/clearlagg/pages/mob-types/nodes/ #
 #--------------------------------------------------------------------#
- 
 settings:
-  # Should ClearLag automatically update on-enabled?
   auto-update: false
-  # Should ClearLag command signs be enabled?
   enable-signs: true
-  # DONT TOUCH THIS!
   config-version: twelve
   disable-waterlife: true
   keep-spawn-in-memory: true
   
-#Should ClearLag reset the config (more stable), or attempt to add the new paths into your config?
-# -- Putting this as false wont reset your config, but may cause bugs.. Still in testing!
+#Should clearlag reset the config (more stable), or attempt to add the new paths into your config?
+# -- Puting this as false wont reset your config, but may cause bugs.. Still in testing!
 config-updater:
   force-update: false
  
 #This limits the mob egg spawners so players cannot "overload" the server with them
-# -- 'check-radius' stands for the radius ClearLag will check for nearby entities
+# -- 'check-radius' stands for the radius clearlag will check for nearby entities
 # -- 'max-mobs' is how many entities may be in the radius before the spawning is blocked
 mobegg-limiter:
   enabled: false
   check-radius: 8
-  max-mobs: 3
+  max-mobs: 5
  
 #Disable new chunk generation, or just put a cap on how many can load at once.
 # -- THIS DOES NOT WORK WITH 1.6.4!
@@ -45,12 +41,11 @@ chunk-limiter:
 # -- Lower it is, the better your entity tick will be
 # -- If it's too high, expect bugs / lots of lag
 # -- You MUST reboot your server to use these, /lagg reload will NOT work...
-# REVERT ZOMBIE & SKELETON TO 23
 mob-range:
-  enabled: true
-  zombie: 6
-  skeleton: 3
-  creeper: 3
+  enabled: false
+  zombie: 30
+  skeleton: 30
+  creeper: 20
  
 #How long should items/Mobs be left on the ground
 # -- Goes by seconds
@@ -62,13 +57,13 @@ live-time:
   moblivetime: 600
   itemlivetime: 240
  
-#Let ClearLag control the spawning in ALL worlds? (Supports all plugins!)
+#Let clearlag control the spawning in ALL worlds? (Supports all plugins!)
 # -- This will also respect cancelations, unlike minecraft's native code
 custom-mobspawner:
   enabled: false
-#How many times should ClearLag attempt to find a safe location for the mob to spawn
+#How many times should clearlag attempt to find a safe location for the mob to spawn
   max-tries: 50
-#(In seconds) how often should ClearLag try to spawn mobs?
+#(In seconds) how often should clearlag try to spawn mobs?
   interval: 30
 #This is the radius around the player
   radius: 30
@@ -83,15 +78,7 @@ custom-mobspawner:
 #Chance mobs will have armor/sword, 1 being diamond every time
   armor-chance: 30 
   mobs: #More types of a mob, more likely it'll spawn(ONLY IN NORMAL WORLDS!)
-  - zombie 5
-  - skeleton 3
-  - creeper 2
-  - enderman 1
   animals: #More types of a mob, more likely it'll spawn(ONLY IN NORMAL WORLDS!)
-  - pig 4
-  - sheep 1
-  - cow 6
-  - chicken 2
   
 #This option disallows the placement of too many tnt-minecarts
 tnt-minecart:
@@ -113,75 +100,57 @@ firespread-reducer:
   enabled: false
   time: 2000
   
-#How many entities should one chunk be allowed to hold? 
+#How many entities should one chunk be allowed to hold?
 chunk-entity-limiter:
   enabled: true
-  # Should ClearLag attempt to clean up the over-limit chunk?
   clean-chunk: true
-  # How many entities should this chunk be able to hold?
-  limit: 25
+  limit: 32
   
 spawn-limiter:
   enabled: true
-  # How many times should ClearLag check for over-spawns?
-  interval: 8
-  # How many monsters / creatures should be able to spawn?
-  monsters: 20
-  # How many animals / villagers should be able to spawn?
-  animals: 15
+  interval: 2
+  monsters: 90
+  animals: 90
   
 #Meters your TPS, if it goes to low, run the commands you wrote below!
 tps-meter:
   enabled: false
-  #In seconds - how many seconds should ClearLag test the TPS?
   interval: 15 
-  #How low of TPS should trigger the commands?
   tps-trigger: 14.0
-  #Commands to run when TPS is low
   commands:
-    - 'lagg killmobs'
-    - 'lagg clear'
   
 #This is /lagg killmobs, put what you DON'T want removed! 
 kill-mobs:
-   # Should the ability to build withers be disabled?
    disable-build-wither: false 
-   # What mobs SHOULDN'T be removed during /lagg killmobs
    mob-filter:
-        - Villager
-        - Wolf
-        - Horse
+   - Villager
+   - Wolf
+   - Horse
+   - ocelot
+   - squid
   
 #This takes care of mob spawners
 mobspawner:
   enabled: true
-  # How many mobs should be allowed to spawn near mob spawners?
   max-spawn: 4
   
 #No longer bugged! -- Dont use if you have CB++ or Spigot!
 item-merger:
-  enabled: true
-  radius: 16
+  enabled: false
+  radius: 6
   
 #Auto-removal options
 auto-removal:
   warning-message: '&4[ClearLag] &cWarning Ground items will be removed in one minute!'
   broadcast-message: '&6[ClearLag] &aRemoved +RemoveAmount Entities!'
-  #Should this be broadcasted?
   broadcast-warning: true
-  # THIS IS NO LONGER IN USE!
   enable-scheduler: true
-  #The seconds it takes for auto-removal to run
   autoremoval-interval: 12000
-  #How long until the removal starts (after delay)
   warning-delay: 60
   
-#What should/not be removed during an auto-removal
+#What should be removed during an auto-removal
 remove:
-  #What worlds should be ingored from removal?
   world-filter:
-    - this_world
-  #Should this removal be broadcasted?
   broadcast-removal: true
   boat: false
   falling-block: true
@@ -197,18 +166,11 @@ remove:
   fireball: true
   ender-signal: true
   item-filter:
-  # - 264
-  # - 265
-  # - 311
-  # - 312
-  # - 266
   mobs:
-  # - cow
  
 #What should be removed during /lagg clear 
 command-remove:
   world-filter:
-    - this_world
   broadcast-removal: false
   boat: true
   falling-block: true
@@ -224,24 +186,17 @@ command-remove:
   fireball: true
   ender-signal: true
   item-filter:
-  # - 264
-  # - 265
-  # - 311
-  # - 312
-  # - 266
   mobs:
-  # - cow
    
 check:
   world-filter:
-    - this_world
   boat: true
   falling-block: true
   experienceOrb: true
   painting: true
   projectile: true
   item: true
-  itemframe: true
+  itemframe: false
   minecart: true
   primed-tnt: true
   arrow: true
@@ -249,11 +204,6 @@ check:
   fireball: true
   ender-signal: true
   item-filter:
-  # - 264
-  # - 265
-  # - 311
-  # - 312
-  # - 266
   mobs:
     creature: true
     animals: true
@@ -261,11 +211,9 @@ check:
    
 limit:
   enable-limit: true
-  #Max entities allowed
-  max: 1200
-  check-interval: 60
+  max: 100
+  check-interval: 10
   world-filter:
-    - this_world
   broadcast-removal: true
   remove:
   boat: false
@@ -282,8 +230,4 @@ limit:
   fireball: true
   ender-signal: true
   item-filter:
-  # - 264
-  # - 265
-  # - 311
-  # - 312
-  # - 266
+

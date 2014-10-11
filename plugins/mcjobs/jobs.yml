@@ -1,42 +1,33 @@
 jobs:
   digger:
     description: The digger earns money by breaking blocks with the shovel.
-    basepay: 0.1
-    exp: 0.02
+    basepay: 0.75
+    exp: 1
     # **** ADD ****
-    # X161 = Dried Mud
-    # X1488:1 GRAVEL
-    # X1488:2
-    # X1488:3
-    # X1488:4
-    # X1488:5
     break:
       pays: true
       hide: false
       # X160 = Mud (Biomes O' Plenty)
-      tier1: dirt sand grass soil x160 ice snow_block
+      # X161 = Dried Mud
+      tier1: sand soil X160 X161 ice snow_block
+      
       tier2: gravel clay stained_clay
+      
       # X160 = Quicksand
       # X167 = Hardened Sand
       # X168 = Hardened Dirt
       tier3: X160 X167 X168
+      
       # X1476 = Blue Slimedirt
       tier4: soul_sand mycel x1476
+      
       # X252 = Heat Sand
       # X253 = Tainted Soil
-      # X1488:1 GRAVEL
-      # X1488:2
-      # X1488:3
-      # X1488:4
-      # X1488:5
       tier5: X252 X253
   miner:
     description: The miner earns money by breaking blocks with the pickaxe.
-    basepay: 0.16
-    exp: 0.03
-    # **** ADD ****
-    # X2403:7 = Amber Bearing Stone
-    # X1900 = Power Ore
+    basepay: 1
+    exp: 1
     break:
       pays: true
       hide: false
@@ -45,76 +36,66 @@ jobs:
       # X163 = Ash Block (Biomes O' Plenty)
       # X164 = Ash Stone (Biomes O' Plenty)
       # X1398 = Apatite Ore (Forestry)
-      tier2: stone mossy_cobblestone ender_stone X163 X164 coal_ore iron_ore glowing_redstone_ore
+      tier2: mossy_cobblestone ender_stone X163 X164 coal_ore iron_ore glowing_redstone_ore X1398
       
       # X667 = Fallen Meteor (Cold)
-      # X1398:2 & X1475:4 *X4095:1* = Tin Ore (*Thermal Expansion)
-      # X4095:3 = Lead Ore
-      # X4095:2 = Silver Ore
-      # X4095:1 X4095:3 X4095:2
+      # ~~X1398:2 & ~~X1475:4 ~~X4095:1 = Tin Ore (*Thermal Expansion)
+      # ~~X4095:3 = Lead Ore
+      # ~~X4095:2 = Silver Ore
       tier3: obsidian gold_ore lapis_ore
       
       # X917 = Essence Ore
       # X902 = Certus Quartz Ore
-      # X1398:1 & X1475:3 & *X4095* = Copper Ore (*Thermal Expansion)
-      # X1475:5 = Aluminum Ore
+      # ~~X1398:1 & ~~X1475:3 & X4095 = Copper Ore (*Thermal Expansion)
+      # ~~X1475:5 = Aluminum Ore
       # X2403 = Cinnabar Ore
-      # X917 X902 X4095 X1475:5 X2403
-      tier4: X917 X902 X4095 X1475:5 X2403
-     
-      # BUGGED X667:2 = Fallen Meteor (Hot)
-      # X4095:4 = Ferrous Ore
-      # X3402 = Uranium Ore
+      # X1900 = Power Ore
+      tier4: X917 X902 X4095 X2403
       
+      # ~~X667:2 = Fallen Meteor (Hot)
+      # ~~X4095:4 = Ferrous Ore
+      # X3402 = Uranium Ore
       # X2621 = Amethyst Ore
-      # X2621:2 = Ruby Ore
-      # X2621:4 = Peridot Ore
-      # X2621:6 = Topez Ore
-      # X2621:8 = Tanzanite Ore
-      # X2621:10 = Malachite Ore
-      # X2621:12 = Sapphire Ore
-      # quartz_ore X667:2 X4095:4 X3402
-      # X2621 X2621:2 X2621:4 X2621:6 X2621:8 X2621:10 X2621:12
-      # X4095:4 X3402
-      tier5: diamond_ore emerald_ore quartz_ore
-      tier6: X4095:1
-      tier7: X4095:3
-      tier8: X4095:2
-      tier9:  
+      # ~~X2621:2 = Ruby Ore
+      # ~~X2621:4 = Peridot Ore
+      # ~~X2621:6 = Topez Ore
+      # ~~X2621:8 = Tanzanite Ore
+      # ~~X2621:10 = Malachite Ore
+      # ~~X2621:12 = Sapphire Ore
+      tier5: diamond_ore emerald_ore quartz_ore X3402 X2621
+      
       
       
   woodworker:
     description: The woodworker earns money chopping trees, crafting wooden and stone objects. Earns money by chopping trees and crafting wood items.
-    basepay: 3.0
-    exp: 2
+    basepay: 0.75
+    exp: 1
     break:
       pays: true
       hide: false
       tier1: leaves
       tier4: log
-    place:
-      pays: true
-      hide: false
-      tier2: sapling
+    #place:
+    #  pays: true
+    #  hide: false
+      #tier2: sapling
     craft:
       pays: true
       hide: false
-      tier1: wood_stairs sign_post wooden_door wall_sign trap_door fence bed_block ladder step stick wood_axe wood_spade wood_hoe wood_pickaxe fishing_rod bowl wood_sword
-      tier2: cobblestone_stairs fence_gate birch_wood_stairs double_step jungle_wood_stairs sandstone_stairs spruce_wood_stairs stone_axe stone_spade stone_hoe stone_pickaxe
-      tier3: brick brick_stairs smooth_brick smooth_stairs nether_brick nether_fence nether_brick_stairs
-      tier4: iron_door_block dispenser bookshelf iron_fence
-      tier5: bookshelf
+      tier3: wood_stairs spruce_wood_stairs jungle_wood_stairs birch_wood_stairs fence_gate fence double_step step sign_post wall_sign wooden_door trap_door ladder stick bowl 
+      tier4: brick brick_stairs cobblestone_stairs sandstone_stairs smooth_brick smooth_stairs wood_axe wood_spade wood_hoe wood_pickaxe wood_sword
+      tier5: bookshelf iron_door_block dispenser bookshelf iron_fence nether_brick nether_fence nether_brick_stairs stone_axe stone_spade stone_hoe stone_pickaxe fishing_rod bed_block
       
   blacksmith:
     description: Earns money by crafting and repairing weaponery.
-    basepay: 25.0
-    exp: 5
+    basepay: 2
+    exp: 1
     craft:
       pays: true
       hide: false
       tier1: stone_sword leather_helmet leather_boots leather_chestplate leather_leggings
       tier2: gold_axe gold_spade gold_hoe gold_pickaxe iron_helmet iron_boots gold_helmet gold_boots
-      tier3: gold_sword iron_axe iron_spade iron_hoe iron_pickaxe compassiron_chestplate iron_leggings gold_chestplate gold_leggings
+      tier3: gold_sword iron_axe iron_spade iron_hoe iron_pickaxe compass iron_chestplate iron_leggings gold_chestplate gold_leggings
       tier4: iron_sword bow diamond_axe diamond_spade diamond_hoe diamond_pickaxe diamond_helmet diamond_boots  
       tier5: diamond_sword diamond_chestplate diamond_leggings
     repair:
@@ -126,8 +107,8 @@ jobs:
       
   builder:
     description: The builder earns money by placing construction blocks.
-    basepay: 7.0
-    exp: 0.1
+    basepay: 5.0
+    exp: 1
     place:
       pays: true
       hide: false
@@ -139,22 +120,21 @@ jobs:
 
   soldier:
     description: A soldier earns cash by clearing the wilderness of monsters.
-    basepay: 5.0
-    show_every_time: true
-    exp: 5
-    # cave_spider pig_zombie magma_cube
+    basepay: 0.25
+    #show_every_time: true
+    exp: 0.5
     defeat:
       pays: true
       hide: false
-      tier1: wolf ocelot cow chicken sheep mushroomcow squid pig bat
-      tier2: enderman creeper cavespider spider zombie skeleton slime silverfish
-      tier3: pigzombie giant
-      tier4: blaze magmacube wither irongolem
-      tier5: silverfish enderdragon ghast witch
+      tier1: wolf ocelot squid bat
+      tier2: enderman creeper cave_spider spider zombie skeleton slime silverfish
+      tier3: pig_zombie giant
+      tier4: blaze magma_cube wither iron_golem
+      tier5: silverfish ender_dragon ghast witch
       
   tinkerer:
     description: Earns money by laying and crafting electrical components.
-    basepay: 5.0
+    basepay: 5
     exp: 2
     place:
       pays: true
@@ -171,7 +151,7 @@ jobs:
 
   farmer:
     description: Slaughtering animals and cultivating crops pays this job.
-    basepay: 0.5
+    basepay: 0.75
     exp: 1
     break:
       pays: true
@@ -185,12 +165,12 @@ jobs:
     defeat:
       pays: true
       hide: false
-      tier2: cow chicken pig sheep
+      tier2: cow chicken pig sheep mushroom_cow
       
   fisherman:
     description: Earn money for catching fish.
     basepay: 4.0
-    show_every_time: true
+    #show_every_time: true
     exp: 2
     fishing:
       pays: true
@@ -199,8 +179,8 @@ jobs:
       
   baker:
     description: Cooking foods and food based potion items pays the baker.
-    basepay: 2.0
-    show_every_time: true
+    basepay: 3
+    #show_every_time: true
     exp: 1
     craft:
       pays: true
@@ -213,9 +193,9 @@ jobs:
       
   alchemist:
     description: Crafting defensive potoins pays the alchemist.
-    basepay: 2.0
-    show_every_time: true
-    exp: 5
+    basepay: 0.75
+    #show_every_time: true
+    exp: 1
     potions:
       pays: true
       hide: false
@@ -227,9 +207,9 @@ jobs:
       
   enchanter:
     description: Invoking spells to weapons pays the enchanter.
-    basepay: 25.0
-    show_every_time: true
-    exp: 10
+    basepay: 10.0
+    #show_every_time: true
+    exp: 3
     enchant:
       pays: true
       hide: false
@@ -241,10 +221,15 @@ jobs:
       
   bulldozer:
     description: It's expensive to break down the world of minecraft.
-    basepay: 10.0
-    show_every_time: true
+    basepay: 10
+    show_every_time: false
     exp: 0
     default: true
+    place:
+      pays: true
+      hide: false
+      tier: sapling
+      
     break:
       pays: true
       hide: false
@@ -256,8 +241,8 @@ jobs:
       
   taxes:
     description: In this world nothing can be said to be certain, except death and taxes.
-    basepay: 0
-    show_every_time: true
+    basepay: 9.0
+    show_every_time: false
     exp: 0
     default: true
     break:

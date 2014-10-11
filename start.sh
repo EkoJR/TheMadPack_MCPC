@@ -1,2 +1,0 @@
-#!/bin/sh
-screen -dmS mc java -server -d32 -Xincgc -Xmx3G -XX:MaxPermSize=512M -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=2 -XX:+AggressiveOpts -jar mcpc-plus-1.6.4-R2.1-forge965-B251.jar nogui

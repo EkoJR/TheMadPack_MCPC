@@ -221,13 +221,35 @@ player-commands:
 # 'delay' refers to the cooldown between how often you can use each kit, measured in seconds.
 # For more information, visit http://wiki.ess3.net/wiki/Kits
 kits:
-  tools:
-    delay: 200
+  starter:
+    delay: 6000
     items:
       - 272 1
       - 273 1
       - 274 1
       - 275 1
+      - 284 1
+      - 54 1
+      - 17 16
+      - 393 32
+      - 50 16
+  tools:
+    delay: 12000
+    items:
+      - 257 1
+      - 256 1
+      - 258 1
+      - 292 1
+  battleReady:
+    delay: 36000
+    items:
+      - 28491 1
+      - 261 1
+      - 262 64
+      - 8288 1
+      - 30194 1
+      - 30193 1
+      - 30192 1
 #  dtools:
 #    delay: 600
 #    items:
@@ -329,7 +351,7 @@ auto-afk: 300
 # After this timeout in seconds, the user will be kicked from the server.
 # essentials.afk.kickexempt node overrides this feature.
 # Set to -1 for no timeout.
-auto-afk-kick: -1
+auto-afk-kick: 1800
 
 # Set this to true, if you want to freeze the player, if he is afk.
 # Other players or monsters can't push him out of afk mode then.
@@ -400,7 +422,7 @@ mails-per-minute: 1000
 
 # Set the maximum time /tempban can be used for in seconds.
 # Set to -1 to disable, and essentials.tempban.unlimited can be used to override.
-max-tempban-time: -1
+max-tempban-time: 86400
 
 ############################################################
 # +------------------------------------------------------+ #
@@ -697,7 +719,7 @@ newbies:
   # Do we want to give users anything on first join? Set to '' to disable
   # This kit will be given regardless of cost, and permissions.
   #kit: ''
-  kit: tools
+  kit: starter
 
 # Set this to lowest, if you want Multiverse to handle the respawning.
 # Set this to high, if you want EssentialsSpawn to handle the respawning.

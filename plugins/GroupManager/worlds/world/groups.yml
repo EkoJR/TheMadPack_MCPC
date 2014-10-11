@@ -7,12 +7,26 @@
 # and are defined in the this groups.yml file.
 #
 # Local group inheritances define your promotion tree when using 'manpromote/mandemote'
+#
+#
+# PERM NODES
+# 
+# ClearLagg
+# lagg.clear
+# lagg.check
+# lagg.reload
+# lagg.killmobs
+# lagg.area
+# lagg.unloadchunks
+# lagg.chunk
+# lagg.tpchunk
+# lagg.help
+# 
 
 groups:
   Default:
     default: false
     permissions:
-    - -mcmmo.mobhealthdisplay
     - -bukkit.command.kill
     inheritance:
     - g:groupmanager_default
@@ -22,24 +36,14 @@ groups:
       prefix: '&8'
       build: false
       suffix: ''
-  Builder:
-    default: false
-    permissions: []
-    inheritance:
-    - default
-    - g:essentials_builder
-    info:
-      prefix: '&2'
-      build: true
-      suffix: ''
   Member:
     default: true
     permissions: []
     inheritance:
-    - builder
+    - default
     - g:essentials_member
     info:
-      prefix: '&2[Member]'
+      prefix: '&2[Member]&r&e'
       build: true
       suffix: ''
   Streamer:
@@ -51,7 +55,7 @@ groups:
     - g:bukkit_streamer
     - g:essentials_streamer
     info:
-      prefix: '&5[Streamer]'
+      prefix: '&5[Streamer]&r&e'
       build: true
       suffix: ''
   Moderator:
@@ -64,7 +68,18 @@ groups:
     - g:essentials_moderator
     #- g:vanish_moderator
     info:
-      prefix: '&c&l[Mod]'
+      prefix: '&c&l[Mod]&r&6'
+      build: true
+      suffix: ''
+  Boss:
+    default: false
+    permissions: []
+    inheritance:
+    - moderator
+    - g:essentials_boss
+    #- g:vanish_moderator
+    info:
+      prefix: '&c&l[Boss]&r&6'
       build: true
       suffix: ''
   Admin:
@@ -77,17 +92,18 @@ groups:
     - g:essentials_admin
     #- g:vanish_admin
     info:
-      prefix: '&4&l[Admin]'
+      prefix: '&4&l[Admin]&r&6'
       build: true
       suffix: ''
-  Owner:
+  Super_Admin:
     default: false
     permissions:
     - '*'
     - -vanish.*
     inheritance:
     - admin
+    - g:essentials_super_admin
     info:
-      prefix: '&e&l[Owner]'
+      prefix: '&e&l[Super]&r&6'
       build: true
       suffix: ''

@@ -4,7 +4,7 @@ GriefPrevention:
   DataStore: flat
   DebugLevel: None
   Claims:
-    MaxAccruedBlocks: 3100
+    MaxAccruedBlocks: 1000000000
     AutoSubClaimsSwitch: false
     DeleteWithUnrecognizedOwner: false
     InitialBlocks: 3000

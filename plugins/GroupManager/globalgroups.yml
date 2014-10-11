@@ -64,18 +64,18 @@ groups:
 
   g:bukkit_moderator:
     permissions:
-    - bukkit.command.ban
-    - bukkit.command.ban.ip
-    - bukkit.command.ban.player
-    - bukkit.command.gamemode
     - bukkit.command.unban
     - bukkit.command.unban.ip
     - bukkit.command.unban.player
 
   g:bukkit_admin:
     permissions:
+    - bukkit.command.ban
+    - bukkit.command.ban.ip
+    - bukkit.command.ban.player
     - bukkit.broadcast
     - bukkit.broadcast.admin
+    - bukkit.command.gamemode
     - bukkit.command.give
     - bukkit.command.help
     - bukkit.command.kill
@@ -109,15 +109,15 @@ groups:
     permissions:
     - essentials.help
     - essentials.helpop
+    - essentials.jail.allow.help
+    - essentials.jail.allow.helpop
+    - essentials.jail.allow.rules
     - essentials.list
     - essentials.motd
     - essentials.rules
     - essentials.spawn
-    - essentials.jail.allow.help
-    - essentials.jail.allow.helpop
-    - essentials.jail.allow.rules
 
-  g:essentials_builder:
+  g:essentials_member:
     permissions:
     - essentials.afk
     - essentials.afk.auto
@@ -126,8 +126,8 @@ groups:
     - essentials.balance
     - essentials.chat.color
     - essentials.chat.format
-    - essentials.chat.shout
     - essentials.chat.question
+    - essentials.chat.shout
     - essentials.compass
     - essentials.delhome
     - essentials.depth
@@ -137,7 +137,12 @@ groups:
     - essentials.home
     - essentials.ignore
     - essentials.itemdb
+    - essentials.jail.allow.mail
+    - essentials.jail.allow.ping
+    - essentials.jail.allow.seen
     - essentials.kit
+    - essentials.kits.battleReady
+    - essentials.kits.starter
     - essentials.kits.tools
     - essentials.mail
     - essentials.mail.send
@@ -152,15 +157,15 @@ groups:
     - essentials.sethome
     - essentials.sethome.bed
     - essentials.sethome.multiple
-    - essentials.signs.use.*
-    - essentials.signs.create.disposal
-    - essentials.signs.create.mail
-    - essentials.signs.create.protection
-    - essentials.signs.create.trade
     - essentials.signs.break.disposal
     - essentials.signs.break.mail
     - essentials.signs.break.protection
     - essentials.signs.break.trade
+    - essentials.signs.create.disposal
+    - essentials.signs.create.mail
+    - essentials.signs.create.protection
+    - essentials.signs.create.trade
+    - essentials.signs.use.*
     - essentials.suicide
     - essentials.time
     - essentials.tpa
@@ -168,80 +173,86 @@ groups:
     - essentials.tpahere
     - essentials.tpdeny
     - essentials.warp
+    - essentials.warps.*
     - essentials.worth
-    - essentials.jail.allow.mail
-    - essentials.jail.allow.ping
-    - essentials.jail.allow.seen
-
-  g:essentials_member:
-    permissions: []
-
+    
   g:essentials_streamer:
     permissions:
     - essentials.balance.others
     - essentials.balancetop
-    - essentials.book
+    - essentials.ban.notify
+    - essentials.feed
+    - essentials.gc
     - essentials.kick
-    - essentials.sethome.multiple.streamer
+    - essentials.kick.notify
+    - essentials.near
     - essentials.nick
+    - essentials.nick.color
+    - essentials.nick.format
     - essentials.seen
+    - essentials.seen.banreason
+    - essentials.sethome.multiple.streamer
     - essentials.warp.list
-
+    
   g:essentials_moderator:
     permissions:
     - -essentials.spawner.enderdragon
     - essentials.afk.kickexempt
-    - essentials.ban
-    - essentials.ban.notify
-    - essentials.banip
-    - essentials.book.title
-    - essentials.book.others
+    - essentials.balance.others
     - essentials.broadcast
-    - essentials.chat.url
+    - essentials.chat.ignoreexempt
     - essentials.chat.magic
-    - essentials.clearinventory
+    - essentials.chat.url
+    - essentials.deljail
     - essentials.delwarp
     - essentials.eco.loan
     - essentials.exp.others
     - essentials.ext
+    - essentials.feed.cooldown.bypass
     - essentials.fly
     - essentials.fly.safelogin
     - essentials.getpos
     - essentials.getpos.others
+    - essentials.hat
+    - essentials.heal
+    - essentials.heal.cooldown.bypass
+    - essentials.heal.others
     - essentials.helpop.receive
     - essentials.home.others
     - essentials.invsee
+    - essentials.jail.allow.jails
+    - essentials.jail.allow.togglejail
+    - essentials.jail.exempt
     - essentials.jails
+    - essentials.joinfullserver
     - essentials.jump
-    - essentials.kick.notify
-    - essentials.kill
-    - essentials.kits.*
+    - essentials.kick
+    - essentials.kill.exempt
+    - essentials.kit.others
     - essentials.msg.magic
     - essentials.mute
     - essentials.mute.notify
     - essentials.nick.color
     - essentials.nick.others
+    - essentials.protect.admin
+    - essentials.protect.alerts
+    - essentials.protect.ownerinfo
+    - essentials.ptime
+    - essentials.ptime.others
+    - essentials.realname
     - essentials.realname
     - essentials.seen.banreason
     - essentials.seen.extra
     - essentials.sethome.multiple.staff
+    - essentials.setjail
     - essentials.setwarp
-    - essentials.signs.create.*
-    - essentials.signs.break.*
-    - essentials.spawner
-    - essentials.spawner.*
-    - essentials.thunder
+    - essentials.sleepingignored
+    - essentials.tempban
+    - essentials.tempban.exempt
     - essentials.time
     - essentials.time.set
-    - essentials.powertool
-    - essentials.powertool.append
-    - essentials.powertooltoggle
-    - essentials.protect.alerts
-    - essentials.protect.admin
-    - essentials.protect.ownerinfo
-    - essentials.ptime
-    - essentials.ptime.others
     - essentials.togglejail
+    - essentials.togglejail.offline
     - essentials.top
     - essentials.tp
     - essentials.tp.others
@@ -250,26 +261,124 @@ groups:
     - essentials.tptoggle
     - essentials.unban
     - essentials.unbanip
+    - essentials.warp.otherplayers
+    - essentials.weather
+    
+  g:essentials_boss:
+    permissions:
+    - essentials.burn
+    - essentials.ext
+    - essentials.fireball
+    - essentials.firework
+    - essentials.firework.fire
+    - essentials.home.others
+    - essentials.jump
+    - essentials.keepxp
+    - essentials.lightning
+    - essentials.lightning.others
     - essentials.vanish
     - essentials.vanish.effect
-    - essentials.warps.*
-    - essentials.weather
+    - essentials.ban
+    - essentials.ban.exempt
+    
+  g:essentials_admin:
+    permissions:
+    - essentials.backup
+    - essentials.ban
+    - essentials.ban.exempt
+    - essentials.ban.offline
+    - essentials.banip
+    - essentials.book
+    - essentials.book.author
+    - essentials.book.others
+    - essentials.book.title
+    - essentials.broadcast
+    - essentials.burn
+    - essentials.chat.spy
+    - essentials.clearinventory
+    - essentials.clearinventory.others
+    - essentials.delhome.others
+    - essentials.delwarp
+    - essentials.eco
+    - essentials.enchant
+    - essentials.exp
+    - essentials.exp.*
+    - essentials.ext
+    - essentials.fireball
+    - essentials.firework
+    - essentials.firework.fire
+    - essentials.fly.others
+    - essentials.gamemode
+    - essentials.gamemode.others
+    - essentials.give
+    - essentials.god
+    - essentials.god.others
+    - essentials.god.pvp
+    - essentials.home.others
+    - essentials.info
+    - essentials.invsee.*
+    - essentials.jump
+    - essentials.keepxp
+    - essentials.kick.exempt
+    - essentials.kickall
+    - essentials.kill
+    - essentials.kit.exemptdelay
+    - essentials.kits.*
+    - essentials.lightning
+    - essentials.lightning.others
+    - essentials.list.hidden
+    - essentials.motd
+    - essentials.mute.exempt
+    - essentials.mute.offline
+    - essentials.near.maxexempt
+    - essentials.nuke
+    - essentials.plugin
+    - essentials.powertool
+    - essentials.powertool.append
+    - essentials.powertooltoggle
+    - essentials.ptime
+    - essentials.ptime.others
+    - essentials.reloadall
+    - essentials.repair
+    - essentials.repair.all
+    - essentials.repair.armor
+    - essentials.repair.enchanted
+    - essentials.seen.extra
+    - essentials.seen.ipsearch
+    - essentials.sethome.multiple.staff
+    - essentials.sethome.others
+    - essentials.setspawn
+    - essentials.setwarp
+    - essentials.setworth
+    - essentials.signs.*
+    - essentials.silentjoin
+    - essentials.silentquit
+    - essentials.socialspy
+    - essentials.socialspy.others
+    - essentials.spawner
+    - essentials.spawner.*
+    - essentials.speed
+    - essentials.speed.fly
+    - essentials.speed.others
+    - essentials.speed.walk
+    - essentials.sudo
+    - essentials.tempban.offline
+    - essentials.time
+    - essentials.time.set
+    - essentials.top
+    - essentials.tppos
+    - essentials.vanish
+    - essentials.vanish.*
+    - essentials.vanish.effect
     - essentials.whois
     - essentials.workbench
     - essentials.world
     - essentials.worlds.*
-    - essentials.jail.allow.jails
-    - essentials.jail.allow.togglejail
-
-  g:essentials_admin:
+    
+  g:essentials_super_admin:
     permissions:
-    - -essentials.backup
-    - -essentials.essentials
-    - -essentials.setspawn
-    - -essentials.reloadall
-    - -essentials.plugin
     - essentials.*
-
+    
 # Permission nodes for VanishNoPacket by mbaxter
 # http://dev.bukkit.org/server-mods/vanish/
 
